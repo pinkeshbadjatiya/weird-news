@@ -1,0 +1,99 @@
+pinkesh.badjatiya@kattapa:~/IRE-project/extr+classifi$ python init.py nb
+accuracy :  0.780841101046
+Precision & Recall
+             precision    recall  f1-score   support
+
+          X       0.87      0.55      0.67      9441
+          Y       0.75      0.94      0.83     13410
+
+avg / total       0.80      0.78      0.77     22851
+
+
+pinkesh.badjatiya@kattapa:~/IRE-project$ python init.py rfc
+Encoder Type: tfidf
+accuracy :  0.63984070719
+Precision & Recall
+             precision    recall  f1-score   support
+
+          X       0.97      0.13      0.23      9423
+          Y       0.62      1.00      0.76     13428
+
+avg / total       0.77      0.64      0.54     22851
+
+
+
+pinkesh.badjatiya@kattapa:~/IRE-project$ python init.py nn 
+Encoder Type: tfidf
+accuracy :  0.890770644611                          
+Precision & Recall                                     
+             precision    recall  f1-score   support
+                                                       
+          X       0.88      0.85      0.87      9373
+          Y       0.90      0.92      0.91     13478
+                                                       
+avg / total       0.89      0.89      0.89     22851   
+
+
+
+pinkesh.badjatiya@kattapa:~/IRE-project$ python init.py gbc
+Encoder Type: tfidf
+accuracy :  0.78911207387
+Precision & Recall
+             precision    recall  f1-score   support
+
+          X       0.81      0.63      0.71      9297
+          Y       0.78      0.90      0.83     13554
+
+avg / total       0.79      0.79      0.78     22851
+
+
+
+pinkesh.badjatiya@kattapa:~/IRE-project$ python init.py abc
+Encoder Type: tfidf
+accuracy :  0.788018029846
+Precision & Recall
+             precision    recall  f1-score   support
+
+          X       0.81      0.63      0.71      9347
+          Y       0.78      0.90      0.83     13504
+
+avg / total       0.79      0.79      0.78     22851
+
+
+
+pinkesh.badjatiya@kattapa:~/IRE-project$ python init.py lstm
+             precision    recall  f1-score   support
+
+     class0       0.91      0.86      0.88      9402
+     class1       0.90      0.94      0.92     13449
+
+avg / total       0.91      0.91      0.90     22851
+
+
+
+pinkesh.badjatiya@kattapa:~/IRE-project$ python init.py cnn
+             precision    recall  f1-score   support
+
+     class0       0.87      0.89      0.88      9387
+     class1       0.92      0.91      0.91     13464
+
+avg / total       0.90      0.90      0.90     22851
+
+
+pinkesh.badjatiya@kattapa:~/IRE-project$ python init.py dt
+             precision    recall  f1-score   support
+
+          X       0.74      0.72      0.73      9290
+          Y       0.81      0.83      0.82     13561
+
+avg / total       0.78      0.79      0.79     22851
+
+
+pinkesh.badjatiya@kattapa:~/IRE-project$ python init.py lr
+Precision & Recall
+             precision    recall  f1-score   support
+
+ NormalNews       0.90      0.85      0.87      9460
+  WeirdNews       0.90      0.93      0.91     13391
+
+avg / total       0.90      0.90      0.90     22851
