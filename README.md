@@ -1,4 +1,4 @@
-                                   Weird News Classification & Ranking
+                                          IRE Course Project - Monsoon 2017
 
 # Weird News Classification & Ranking
 ## What is a weird news?
