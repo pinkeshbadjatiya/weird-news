@@ -15,18 +15,17 @@ Figuring out the weirdness score and ranking weird or odd news stories.
 - Classification of the news i.e. whether it is weird or not.
 - Comparison with existing Machine Learning techniques to provide a survey of the performance of various models for this task.
 - Providing a novel Deep Learning architecture for this classification task.
-
-Classifiers used:  
-- Naive Bayes
-- Support Vectors Machines
-- Random forest classifiers
-- Gradient boosting classifiers
-- Ada boosting classifiers
-- Convolutional neural networks
-- Decision tree classifier
-- 3-layered-Perceptron
-- LSTM
-- Auto ML
+- Classifiers used:  
+  - Naive Bayes
+  - Support Vectors Machines
+  - Random forest classifiers
+  - Gradient boosting classifiers
+  - Ada boosting classifiers
+  - Convolutional neural networks
+  - Decision tree classifier
+  - 3-layered-Perceptron
+  - LSTM
+  - Auto ML
 
 
 ## RANKING:
