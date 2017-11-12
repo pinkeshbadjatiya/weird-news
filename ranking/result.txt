@@ -1,0 +1,55 @@
+pinkesh.badjatiya@kattapa:~/IRE-project/ranking$ python init.py nn
+Using Theano backend.
+WARNING (theano.sandbox.cuda): The cuda backend is deprecated and will be removed in the next release (v0.10).  Please switch to the gpuarray backend. You can get more information about how to switch at this URL:
+ https://github.com/Theano/Theano/wiki/Converting-to-the-new-gpu-back-end%28gpuarray%29
+
+Using gpu device 1: GeForce GTX TITAN X (CNMeM is disabled, cuDNN 5110)
+Encoder Type: tfidf
+d====================
+- Ranking Results -
+MSE: 0.20654545738
+RMSE: 0.454472724572
+
+
+
+pinkesh.badjatiya@kattapa:~/IRE-project/ranking$ python init.py lr
+Using Theano backend.
+WARNING (theano.sandbox.cuda): The cuda backend is deprecated and will be removed in the next release (v0.10).  Please switch to the gpuarray backend. You can get more information about how to switch at this URL:
+ https://github.com/Theano/Theano/wiki/Converting-to-the-new-gpu-back-end%28gpuarray%29
+
+Using gpu device 1: GeForce GTX TITAN X (CNMeM is disabled, cuDNN 5110)
+Encoder Type: tfidf
+====================
+- Ranking Results -
+MSE: 0.172377833576
+RMSE: 0.415184096006
+
+
+pinkesh.badjatiya@kattapa:~/IRE-project/ranking$ python init.py nb
+Using Theano backend.
+WARNING (theano.sandbox.cuda): The cuda backend is deprecated and will be removed in the next release (v0.10).  Please switch to the gpuarray backend. You can get more information about how to switch at this URL:
+ https://github.com/Theano/Theano/wiki/Converting-to-the-new-gpu-back-end%28gpuarray%29
+
+Using gpu device 1: GeForce GTX TITAN X (CNMeM is disabled, cuDNN 5110)
+Encoder Type: tfidf
+====================
+- Ranking Results -
+MSE: 0.300296296296
+RMSE: 0.547992971028
+
+
+pinkesh.badjatiya@kattapa:~/IRE-project/ranking$ python init.py rfc
+Using Theano backend.
+WARNING (theano.sandbox.cuda): The cuda backend is deprecated and will be removed in the next release (v0.10).  Please switch to the gpuarray backend. You can get more information about how to switch at this URL:
+ https://github.com/Theano/Theano/wiki/Converting-to-the-new-gpu-back-end%28gpuarray%29
+
+Using gpu device 1: GeForce GTX TITAN X (CNMeM is disabled, cuDNN 5110)
+Encoder Type: tfidf
+====================
+- Ranking Results -
+MSE: 0.0616064469974
+RMSE: 0.248206460426
+
+
+
+

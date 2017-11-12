@@ -65,6 +65,7 @@ def get_embedding_weights(initialize, word2id_map):
             n += 1               
             pass                 
     print "%d embeddings missed"%n
+    print "Size of embedding matrix:", embedding.shape
     return embedding   
 
 def _gen_vocab(tokenizer, data, word2id_map, id2word_map, word2freq_map):
@@ -140,25 +141,17 @@ def transform(texts, word2id_map):
 def get_raw_dataset():
     
     Xtrain, Ytrain, Xtest, Ytest = [], [], [], [] 
-    normal='../normalnews.json'
-    weird='../weirdnews.json'
     
-    docs = []
-    docs = extr.Read_Store(normal, docs)
-    docs = extr.Read_Store(weird, docs)
-    shuffle(docs)
+    trains = extr.Read_Store_Ranking_TRAIN()
+    tests = extr.Read_Store_Ranking_TEST()
+    
+    shuffle(trains)
     
     read = -1
     #read = 100
-    
     if read > 0:
-        docs = docs[:read]
-    else:
-        read = len(docs)
+        trains = trains[:read]
 
-    train_count = int(0.8 * read)
-    trains = docs[:train_count]
-    tests = docs[train_count:]
 
     Xtrain = [ele[0] for ele in trains]
     Ytrain = [ele[1] for ele in trains]

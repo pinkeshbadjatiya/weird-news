@@ -4,6 +4,10 @@ import numpy as np
 
 from sklearn.metrics import classification_report
 import pdb
+from keras import backend as K
+
+from sklearn.cluster import AffinityPropagation
+from sklearn import metrics
 
 
 
@@ -21,7 +25,7 @@ def lstm_model(sequence_length, EMBEDDING_DIM, embedding_matrix, vocab):
     model.add(Dropout(0.3))
     model.add(LSTM(100))
     model.add(Dropout(0.3))
-    model.add(Dense(300))
+    model.add(Dense(300, name='sample-representation'))
     model.add(Dropout(0.3))
     model.add(Dense(2))
     model.add(Activation('softmax'))
@@ -72,9 +76,35 @@ def cnn_model(sequence_length, EMBEDDING_DIM, embedding_matrix, vocab):
     return model
 
 
+
+def predict_using_clustering(Xtrain, YtrainLabels, Xtest):
+    # Compute Affinity Propagation
+    af = AffinityPropagation(preference=-50).fit(Xtrain)
+    cluster_centers_indices = af.cluster_centers_indices_
+    labels = af.labels_
+
+    n_clusters_ = len(cluster_centers_indices)
+    print "No of clusters:", n_clusters
+
+    cluster_label = []
+    p = af.predict(Xtrain)
+    cluster_id__to__class = {}
+    for cluster_id in range(n_clusters):
+        cluster_id__to__class[cluster_id] = np.argmax(np.bincount(YtrainLabels[np.where(p==cluster_id)]))
+
+    p = af.predict(Xtest)
+    predicted_class = []
+    for val in p:
+        predicted_class.append(cluster_id__to__class[val])
+
+    return predicted_class
+
+
+
+
 def LSTM_train(Xtrain, Ytrain, Xtest, Ytest, word2id_map, W):
-    model = (len(Xtrain[0]), EMBEDDING_DIM, W, word2id_map)
-    model.fit(Xtrain, Ytrain, batch_size=32)
+    model = lstm_model(len(Xtrain[0]), EMBEDDING_DIM, W, word2id_map)
+    model.fit(Xtrain, Ytrain, batch_size=25)
     output = model.predict(Xtest)
 
     testlabels = np.argmax(Ytest, axis=1)
@@ -82,7 +112,22 @@ def LSTM_train(Xtrain, Ytrain, Xtest, Ytest, word2id_map, W):
 
     print classification_report(testlabels, output, target_names=['class0', 'class1'])
 
+
+    # Ranking
+    get_intermediate_output = K.function([model.layers[0].input, K.learning_phase()],
+                                  [model.get_layer("sample-representation").output])
+
+    projections = []
+    batch_size = 32
+    for batchX in range(len(Xtest)/32 + 2):
+        if i*batch_size > len(Xtest):
+            break
+        values = get_intermediate_output([batch_X[i*batch_size: (i+1)*batch_size], 0])[0]
+        for value in values:
+            projections.append(value)
+
     pdb.set_trace()
+
 
 
 def CNN_train(Xtrain, Ytrain, Xtest, Ytest, word2id_map, W):
