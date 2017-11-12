@@ -80,7 +80,7 @@ python3,autoML& sklearn Package,gensim
 
 ## How to run:
 ```python init.py <clasifier name>```  
-e.g. python3 init.py nn
+e.g. python init.py nn
 
 Classifiers name:  
 ```
