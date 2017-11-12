@@ -44,7 +44,7 @@ Auto ML
 ## RANKING:
 The Ranking Task:
 
-## Ranking of the weird news as per its weirdness score.
+Ranking of the weird news as per its weirdness score.
 
 Providing a way to rank a set of news based on their weirdness scores.
 
