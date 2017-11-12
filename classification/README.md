@@ -7,6 +7,7 @@ e.g. python init.py nn
 Classifiers name:  
 ```
 nb=naivebayes  
+lr=Logistic Regression  
 svm=support vectors machines  
 
 rfc=randomforestclassifiers  

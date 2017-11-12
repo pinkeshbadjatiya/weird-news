@@ -1,0 +1,48 @@
+<script>
+function myfun(ele){
+	ele.parentElement.classList = ["notsaved"];
+	//console.log(ele);
+	//console.log(ele.parentElement);
+}
+</script>
+<style>
+.remain{
+	background-color: red;
+	margin: 10px;
+	padding: 30px;
+}
+
+.done{
+	background-color: green;
+	margin: 10px;
+	padding: 30px;
+}
+
+.notsaved{
+	background-color: yellow;
+	margin: 10px;
+	padding: 30px;
+}
+
+ol{
+padding: 10px;
+}
+</style>
+<h1>Weird News Rating : <span style="font-weight:bold;">{{remaining}}</span> annotations remaining!</h1>
+<form action={{savepath}} method='POST'>
+    <ol>
+        {% for i in range(1, total+1) %}
+            <div class={{"remain" if ques[i]['annotation'] == -1 else "done" }}>
+	    	<li>{{ques[i]['text']}}</u></li>
+            	{% for j in range(4) %}
+            	    {% if ques[i]['annotation'] == j %}
+            	        <input type='radio' onclick="myfun(this);" value='{{j}}' name='{{i}}' checked >{{j}}
+            	    {% else %}
+            	        <input type='radio' onclick="myfun(this);" value='{{j}}' name='{{i}}' >{{j}}
+            	    {% endif %}
+            	{% endfor %}
+	    </div>
+        {% endfor %}
+    </ol>
+    <input type="submit" value="submit" />
+</form>
