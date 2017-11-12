@@ -35,7 +35,8 @@ Classifiers used:
 - Provide a metric that can be used to quantify the weirdness of a news.
 
 ## Dataset for ranking evaluation:
-We have developed good quality annotations for a dataset that can be used as a gold standard for training and evalution of the ranking predictions.
+We have developed good quality annotations for a dataset that can be used as a gold standard for training and evalution of the ranking predictions. For annotations purposes, we have built a simple annotation application that can be used to gather annotations from the multiple annotators. This simplifies the process of gathering good quality annotations.  
+
 
 ## Probability for Ranking Task:
 - The Weirdness Probability: Weirdness Probability is calculated with respect to the dataset which we have developed with annotation.
