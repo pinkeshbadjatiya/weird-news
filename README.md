@@ -1,6 +1,6 @@
                                    Weird News Classification & Ranking
 
-
+# Weird News Classification & Ranking
 ## What is a weird news?
 
 These are the kind of news wich after reading them induces a sense of disbelief or alienation.
