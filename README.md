@@ -40,7 +40,8 @@ We have developed good quality annotations for a dataset that can be used as a g
 ## Probability for Ranking Task:
 - The Weirdness Probability: Weirdness Probability is calculated with respect to the dataset which we have developed with annotation.
 - We are using the models like Neural Net , Gaussian ‘s  Naive Bayes , Support Vector Machine, Random Forest , Ada Boost and Clustering for finding the probability.
-- We are applying  the Weirdness ranking based on this probability .
+- We are applying the Weirdness ranking based on this probability .
+- We also explore a novel Affinity Propogation based clustering method for generating synthetic ranks for the dataset using clustering.
 
 ## Ranking Task:
 The Ranking is briefly classified into 4 parts:
