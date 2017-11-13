@@ -195,7 +195,7 @@ def convert_to_word_embeddings(Xtrain, Ytrain, Xtest, Ytest):
     testdata = pad_sentences(testdata, word2id_map)
 
     Ytrain = keras.utils.np_utils.to_categorical(Ytrain)
-    Ytest = keras.utils.np_utils.to_categorical(Ytest)
+    #Ytest = keras.utils.np_utils.to_categorical(Ytest)
     
     #pdb.set_trace()
     return Traindata, Ytrain, testdata, Ytest, word2id_map, id2word_map

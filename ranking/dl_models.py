@@ -8,6 +8,7 @@ from keras import backend as K
 
 from sklearn.cluster import AffinityPropagation
 from sklearn import metrics
+from Classifiers import rankingList
 
 
 
@@ -107,9 +108,10 @@ def LSTM_train(Xtrain, Ytrain, Xtest, Ytest, word2id_map, W):
     model.fit(Xtrain, Ytrain, batch_size=25)
     output = model.predict(Xtest)
 
+    rankingList(output, Ytest)
+
     testlabels = np.argmax(Ytest, axis=1)
     output = np.argmax(output, axis=1)
-
     print classification_report(testlabels, output, target_names=['class0', 'class1'])
 
 
@@ -135,9 +137,10 @@ def CNN_train(Xtrain, Ytrain, Xtest, Ytest, word2id_map, W):
     model.fit(Xtrain, Ytrain, batch_size=32)
     output = model.predict(Xtest)
 
+    rankingList(output, Ytest)
+
     testlabels = np.argmax(Ytest, axis=1)
     output = np.argmax(output, axis=1)
-
     print classification_report(testlabels, output, target_names=['class0', 'class1'])
 
     pdb.set_trace()

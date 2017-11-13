@@ -64,3 +64,107 @@ Encoder Type: tfidf
 MSE: 0.112798174255
 RMSE: 0.335854394425
 
+
+pinkesh.badjatiya@kattapa:~/IRE-project/ranking$ python init.py dt
+Using Theano backend.
+WARNING (theano.sandbox.cuda): The cuda backend is deprecated and will be removed in the next release (v0.10).  Please switch to the gpuarray backend. You can get more information about how to switch at this URL:
+ https://github.com/Theano/Theano/wiki/Converting-to-the-new-gpu-back-end%28gpuarray%29
+
+Using gpu device 1: GeForce GTX TITAN X (CNMeM is disabled, cuDNN 5110)
+Encoder Type: tfidf
+====================
+- Ranking Results -
+MSE: 0.295703703704
+RMSE: 0.54378645046
+
+
+pinkesh.badjatiya@kattapa:~/IRE-project/ranking$ python init.py abc
+Using Theano backend.
+WARNING (theano.sandbox.cuda): The cuda backend is deprecated and will be removed in the next release (v0.10).  Please switch to the gpuarray backend. You can get more information about how to switch at this URL:
+ https://github.com/Theano/Theano/wiki/Converting-to-the-new-gpu-back-end%28gpuarray%29
+
+Using gpu device 1: GeForce GTX TITAN X (CNMeM is disabled, cuDNN 5110)
+Encoder Type: tfidf
+====================
+- Ranking Results -
+MSE: 0.0469583461198
+RMSE: 0.216698745081
+
+
+pinkesh.badjatiya@kattapa:~/IRE-project/ranking$ python init.py cnn
+Using Theano backend.
+WARNING (theano.sandbox.cuda): The cuda backend is deprecated and will be removed in the next release (v0.10).  Please switch to the gpuarray backend. You can get more information about how to switch at this URL:
+ https://github.com/Theano/Theano/wiki/Converting-to-the-new-gpu-back-end%28gpuarray%29
+
+Using gpu device 1: GeForce GTX TITAN X (CNMeM is disabled, cuDNN 5110)
+Encoder Type: word-embneddings
+13543 embeddings missed
+Size of embedding matrix: (54593, 300)
+______________________________________________________________________________________________________________________________________________________
+Layer (type)                                                         Output Shape                Param #           Connected to                       
+======================================================================================================================================================
+main-input (InputLayer)                                              (None, 10)                  0                                                    
+______________________________________________________________________________________________________________________________________________________
+embedding_1 (Embedding)                                              (None, 10, 300)             16377900          main-input[0][0]                   
+______________________________________________________________________________________________________________________________________________________
+Convolution-2gram (Convolution1D)                                    (None, 10, 200)             120200            embedding_1[0][0]                  
+______________________________________________________________________________________________________________________________________________________
+Convolution-3gram (Convolution1D)                                    (None, 10, 200)             180200            embedding_1[0][0]                  
+______________________________________________________________________________________________________________________________________________________
+Convolution-4gram (Convolution1D)                                    (None, 10, 200)             240200            embedding_1[0][0]                  
+______________________________________________________________________________________________________________________________________________________
+Convolution-5gram (Convolution1D)                                    (None, 10, 200)             300200            embedding_1[0][0]                  
+______________________________________________________________________________________________________________________________________________________
+globalmaxpooling1d_1 (GlobalMaxPooling1D)                            (None, 200)                 0                 Convolution-2gram[0][0]            
+______________________________________________________________________________________________________________________________________________________
+globalmaxpooling1d_2 (GlobalMaxPooling1D)                            (None, 200)                 0                 Convolution-3gram[0][0]            
+______________________________________________________________________________________________________________________________________________________
+globalmaxpooling1d_3 (GlobalMaxPooling1D)                            (None, 200)                 0                 Convolution-4gram[0][0]            
+______________________________________________________________________________________________________________________________________________________
+globalmaxpooling1d_4 (GlobalMaxPooling1D)                            (None, 200)                 0                 Convolution-5gram[0][0]            
+______________________________________________________________________________________________________________________________________________________
+merge_1 (Merge)                                                      (None, 800)                 0                 globalmaxpooling1d_1[0][0]         
+                                                                                                                   globalmaxpooling1d_2[0][0]         
+                                                                                                                   globalmaxpooling1d_3[0][0]         
+                                                                                                                   globalmaxpooling1d_4[0][0]         
+______________________________________________________________________________________________________________________________________________________
+dense-intermediate-mid-encoder (Dense)                               (None, 300)                 240300            merge_1[0][0]                      
+______________________________________________________________________________________________________________________________________________________
+dropout_1 (Dropout)                                                  (None, 300)                 0                 dense-intermediate-mid-encoder[0][0
+______________________________________________________________________________________________________________________________________________________
+decoded (Dense)                                                      (None, 300)                 90300             dropout_1[0][0]                    
+______________________________________________________________________________________________________________________________________________________
+decoded_drop (Dropout)                                               (None, 300)                 0                 decoded[0][0]                      
+______________________________________________________________________________________________________________________________________________________
+dense_1 (Dense)                                                      (None, 2)                   602               decoded_drop[0][0]                 
+======================================================================================================================================================
+Total params: 17,549,902
+Trainable params: 17,549,902
+Non-trainable params: 0
+______________________________________________________________________________________________________________________________________________________
+None
+Epoch 1/10
+113754/113754 [==============================] - 78s - loss: 0.2630 - acc: 0.8919 - recall: 0.8920      
+Epoch 2/10
+113754/113754 [==============================] - 79s - loss: 0.1974 - acc: 0.9227 - recall: 0.9226     
+Epoch 3/10
+113754/113754 [==============================] - 78s - loss: 0.1463 - acc: 0.9445 - recall: 0.9445     
+Epoch 4/10
+113754/113754 [==============================] - 79s - loss: 0.0916 - acc: 0.9667 - recall: 0.9666     
+Epoch 5/10
+113754/113754 [==============================] - 79s - loss: 0.0475 - acc: 0.9833 - recall: 0.9834     
+Epoch 6/10
+113754/113754 [==============================] - 79s - loss: 0.0271 - acc: 0.9908 - recall: 0.9907     
+Epoch 7/10
+113754/113754 [==============================] - 79s - loss: 0.0161 - acc: 0.9946 - recall: 0.9945         
+Epoch 8/10
+113754/113754 [==============================] - 79s - loss: 0.0124 - acc: 0.9960 - recall: 0.9960         
+Epoch 9/10
+113754/113754 [==============================] - 79s - loss: 0.0098 - acc: 0.9966 - recall: 0.9967         
+Epoch 10/10
+113754/113754 [==============================] - 79s - loss: 0.0081 - acc: 0.9973 - recall: 0.9973         
+====================
+- Ranking Results -
+MSE: 0.277586078435
+RMSE: 0.526864383343
+
