@@ -1,6 +1,6 @@
-                                   Weird News Classification & Ranking
+                                          IRE Course Team Project - Monsoon 2017
 
-
+# Weird News Classification & Ranking
 ## What is a weird news?
 
 These are the kind of news wich after reading them induces a sense of disbelief or alienation.
@@ -9,7 +9,7 @@ These are the kind of news wich after reading them induces a sense of disbelief 
 
 Figuring out the weirdness score and ranking weird or odd news stories.
 
-![alt text](https://user-images.githubusercontent.com/24210648/32700676-4e4847f0-c7ee-11e7-8adf-b2c6d64e669e.png "Weird News Classification & Ranking")
+![Weird News Classification & Ranking Image](https://ptpb.pw/wrdf.png)
 
 ## What we have done:
 - Classification of the news i.e. whether it is weird or not.
@@ -40,7 +40,8 @@ We have developed good quality annotations for a dataset that can be used as a g
 ## Probability for Ranking Task:
 - The Weirdness Probability: Weirdness Probability is calculated with respect to the dataset which we have developed with annotation.
 - We are using the models like Neural Net , Gaussian ‘s  Naive Bayes , Support Vector Machine, Random Forest , Ada Boost and Clustering for finding the probability.
-- We are applying  the Weirdness ranking based on this probability .
+- We are applying the Weirdness ranking based on this probability .
+- We also explore a novel Affinity Propogation based clustering method for generating synthetic ranks for the dataset using clustering.
 
 ## Ranking Task:
 The Ranking is briefly classified into 4 parts:
