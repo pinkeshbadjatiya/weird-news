@@ -23,17 +23,22 @@ Figuring out the weirdness score and ranking weird or odd news stories.
   - Provide a metric that can be used to quantify the weirdness of a news.
 
 ## CLASSIFICATION
-### Classifiers used:  
-  - Naive Bayes
-  - Support Vectors Machines
-  - Random forest classifiers
-  - Gradient boosting classifiers
-  - Ada boosting classifiers
-  - Convolutional neural networks
-  - Decision tree classifier
-  - 3-layered-Perceptron
-  - LSTM
-  - Auto ML
+### Classifiers used: 
+  - Machine Learning based methods
+    - Naive Bayes
+    - Support Vectors Machines
+    - Random forest classifiers
+    - Gradient boosting classifiers
+    - Ada boosting classifiers
+    - Decision tree classifier
+  - Deep Learning based methods
+    - Convolutional neural networks
+    - 3-layered-Perceptron
+    - LSTM
+    - Auto ML
+  - Heuristic based methods
+    - Affinity propogation based clustering
+    - KNN clustering
 
 ## DATA ANNOTATION:  
 - We have developed good quality annotations for a dataset that can be used as a gold standard for training and evalution of the ranking predictions. For annotations purposes, we have built a simple annotation application that can be used to gather annotations from the multiple annotators. This simplifies the process of gathering good quality annotations.  
