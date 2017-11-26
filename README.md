@@ -8,9 +8,8 @@ These are the kind of news wich after reading them induces a sense of disbelief 
 ## Problem Statement : 
 Figuring out the weirdness score and ranking weird or odd news stories.
 
-![Weird News Classification & Ranking Image](https://ptpb.pw/wrdf.png)
-
 ## What we have done:
+![Weird News Classification & Ranking Image](https://ptpb.pw/wrdf.png)
 - **Classsification Task**
   - Classification of the news i.e. whether it is weird or not.
   - Comparison with existing Machine Learning techniques to provide a survey of the performance of various models for this task.
