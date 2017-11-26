@@ -11,13 +11,13 @@ Figuring out the weirdness score and ranking weird or odd news stories.
 ![Weird News Classification & Ranking Image](https://ptpb.pw/wrdf.png)
 
 ## What we have done:
-- Classsification Task:
+- **Classsification Task**
   - Classification of the news i.e. whether it is weird or not.
   - Comparison with existing Machine Learning techniques to provide a survey of the performance of various models for this task.
   - Providing a novel Deep Learning architecture for this classification task.
-- Data Annotation
+- **Data Annotation**
   - Developed a good quality dataset for the ranking task that can be used as a gold standard for evaluation.
-- Ranking Task
+- **Ranking Task**
   - Ranking of the weird news as per its weirdness score.
   - Providing a way to rank a set of news based on their weirdness scores.
   - Provide a metric that can be used to quantify the weirdness of a news.
