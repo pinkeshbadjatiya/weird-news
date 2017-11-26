@@ -6,7 +6,8 @@
 These are the kind of news wich after reading them induces a sense of disbelief or alienation.
 
 ## Problem Statement : 
-Figuring out the weirdness score and ranking weird or odd news stories.
+- **Classification Problem:** Classifiying a news article based solely on the title if it is weird or not.
+- **Ranking Problem:** Figuring out the weirdness score and ranking weird or odd news stories using minimal annotated dataset.
 
 ## What we have done:
 ![Weird News Classification & Ranking Image](https://ptpb.pw/wrdf.png)
